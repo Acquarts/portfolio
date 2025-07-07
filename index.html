@@ -737,5 +737,80 @@
                 'project3-description': 'Colección completa de proyectos de Data Science que incluye análisis exploratorio, modelos predictivos, visualizaciones avanzadas y experimentos con técnicas de Machine Learning. Código limpio, documentado y reproducible.',
                 'project3-link': 'Ver repositorio',
                 'project4-title': '🏆 Perfil Kaggle',
-                'project4-description': 'Participación activa en competiciones de Machine Learning con enfoque en feature engineering, ensemble methods y técnicas avanzadas de modelado. Experiencia en datasets reales y problemas de clasificación y reg
+                'project4-description': 'Participación activa en competiciones de Machine Learning con enfoque en feature engineering, ensemble methods y técnicas avanzadas de modelado. Experiencia en datasets reales y problemas de clasificación y regresión.',
+                'project4-link': 'Ver perfil Kaggle',
+                'contact-title': 'Contacto',
+                'contact-description': '¿Interesado en colaborar o necesitas ayuda con algún proyecto? No dudes en contactarme.',
+                'footer-text': '© 2025 Adrián Zambrana. Todos los derechos reservados.'
+            },
+            en: {
+                'nav-home': 'Home',
+                'nav-about': 'About',
+                'nav-portfolio': 'Projects',
+                'nav-contact': 'Contact',
+                'hero-subtitle': 'Master\'s in Artificial Intelligence - Instituto Europeo de Posgrado',
+                'hero-description': 'Specialist in extracting valuable insights from complex data using advanced Machine Learning, Deep Learning and AI image generation techniques. Experience in the full lifecycle of Data Science projects and AI solution development.',
+                'hero-cta': 'View projects',
+                'about-title': 'About me',
+                'about-intro': 'I am a Data Scientist with specialized training in Artificial Intelligence and solid experience in complex data analysis and AI image generation. My focus is on transforming data into actionable insights that drive strategic decision-making.',
+                'education-title': '🎓 Master\'s in Artificial Intelligence',
+                'education-description': 'Instituto Europeo de Posgrado - Specialization in Machine Learning and Data Science',
+                'about-experience': 'My experience ranges from exploratory analysis to implementing predictive models and AI image generation systems in production. I have a solid foundation in statistics, programming and data visualization, with practical experience in Kaggle competitions and developing advanced analytical solutions.',
+                'skill-data-analysis': 'Exploratory analysis, data cleaning and transformation',
+                'skill-ml': 'Supervised, unsupervised and ensemble methods algorithms',
+                'skill-stats': 'Statistical modeling and regression analysis',
+                'skill-viz': 'Interactive dashboards and advanced visualizations',
+                'skill-generative-title': 'Generative AI',
+                'skill-generative': 'Image generation, prompt engineering and diffusion models',
+                'skill-dl': 'Deep neural networks and advanced architectures',
+                'portfolio-title': 'Projects',
+                'project1-title': 'Analytical Applications',
+                'project1-description': 'Development of interactive web applications that demonstrate real-time data analysis, dynamic visualizations and predictive models implemented for end users.',
+                'project1-link': 'View applications',
+                'project2-title': 'AI Image Generation',
+                'project2-description': 'Specialization in AI image generation models, including fine-tuning diffusion models, prompt engineering for digital art and development of automated visual content generation pipelines.',
+                'project2-link': 'View projects',
+                'project3-title': '📊 GitHub Repository',
+                'project3-description': 'Complete collection of Data Science projects including exploratory analysis, predictive models, advanced visualizations and experiments with Machine Learning techniques. Clean, documented and reproducible code.',
+                'project3-link': 'View repository',
+                'project4-title': '🏆 Kaggle Profile',
+                'project4-description': 'Active participation in Machine Learning competitions with focus on feature engineering, ensemble methods and advanced modeling techniques. Experience with real datasets and classification and regression problems.',
+                'project4-link': 'View Kaggle profile',
+                'contact-title': 'Contact',
+                'contact-description': 'Interested in collaborating or need help with a project? Don\'t hesitate to contact me.',
+                'footer-text': '© 2025 Adrián Zambrana. All rights reserved.'
+            }
+        };
+
+        let currentLanguage = 'es';
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Update button states
+            document.getElementById('btn-es').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Update page content
+            const elementsToTranslate = document.querySelectorAll('[data-key]');
+            
+            elementsToTranslate.forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update document language attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize with Spanish when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage('es');
+        });
+    </script>
+</body>
+</html>
 </html>
